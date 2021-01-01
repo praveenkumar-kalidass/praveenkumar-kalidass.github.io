@@ -4,7 +4,7 @@ on:
     branches:
       - master
 env:
-  VERSION_FILE: ./praveenkumar-kalidass/package.json
+  VERSION_FILE: ./package.json
   VERSION_EXTRACT_PATTERN: '"version": "([^"]+)",'
 jobs:
   deploy:
@@ -25,16 +25,16 @@ jobs:
           version-source: file
           version-file: ${{ env.VERSION_FILE }}
           version-file-extraction-pattern: ${{ env.VERSION_EXTRACT_PATTERN }}
-      - name: Status
-        run: git status
       - name: Move to directory
         run: |
           git fetch origin
+          cp package.json package-temp.json
           git checkout gh-pages
           mv build/* ./
+          mv package-temp.json package.json
       - name: Add & Commit
         run: |
-          git add -- . ':!build' ':!node_modules'
+          git add -- . ':!build' ':!node_modules' ':!package.json'
           git commit -m "Release: v${{ env.RELEASE_VERSION }}"
           git push origin gh-pages
 
