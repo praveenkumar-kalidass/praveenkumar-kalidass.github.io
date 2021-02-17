@@ -30,6 +30,7 @@ jobs:
           git fetch origin
           cp package.json package-temp.json
           git checkout gh-pages
+          rm -rf !("build/")
           mv build/* ./
           mv package-temp.json package.json
       - name: Add & Commit
