@@ -19,6 +19,7 @@ jobs:
           node-version: '14.x'
       - run: yarn install
       - run: yarn build
+      - run: npm version patch
       - name: Version
         uses: HardNorth/github-version-generate@v1.0.2
         with:
@@ -30,12 +31,12 @@ jobs:
           git fetch origin
           mv package.json build/
           git checkout gh-pages
-          rm .eslintcache *.html *.ico *.json *.png *.txt
+          rm -f .eslintcache *.html *.ico *.json *.png *.txt
           rm -rf static/
           mv build/* ./
       - name: Add & Commit
         run: |
-          git add -- . ':!build' ':!node_modules' ':!package.json'
+          git add -- . ':!build' ':!node_modules'
           git commit -m "Release: v${{ env.RELEASE_VERSION }}"
           git push origin gh-pages
 
