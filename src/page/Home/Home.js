@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { TEXT } from '../../constant';
+import View from '../../asset/view.jpeg';
 
 import {
   HomeContainer,
@@ -13,6 +15,7 @@ import {
   LastName,
   Content,
   Designation,
+  ImageParallax,
 } from './Home.style';
 
 const Home = () => {
@@ -31,7 +34,9 @@ const Home = () => {
           </Content>
         </ContentContainer>
       </LeftContainer>
-      <RightContainer />
+      <RightContainer>
+        <ImageParallax bgImage={View} strength={500} />
+      </RightContainer>
     </HomeContainer>
   );
 };

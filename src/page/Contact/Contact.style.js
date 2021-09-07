@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Parallax } from 'react-parallax';
 
 import { COLOR } from '../../constant';
 
@@ -49,4 +50,8 @@ export const Description = styled.text`
   font-size: 14px;
   margin-left: 5px;
   margin-bottom: ${({ smallMargin }) => smallMargin ? '10': '20'}px;
+`;
+
+export const ImageParallax = styled(Parallax)`
+  height: 100%;
 `;

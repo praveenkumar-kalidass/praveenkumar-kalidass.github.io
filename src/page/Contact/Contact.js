@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { TEXT } from '../../constant';
+import Praveen from '../../asset/praveen.jpeg';
 import {
   ContactContainer,
   ContactTitle,
@@ -9,12 +10,15 @@ import {
   ContactDetails,
   DescriptionTitle,
   Description,
+  ImageParallax,
 } from './Contact.style';
 
 const Contact = () => {
   return (
     <ContactContainer>
-      <LeftContainer />
+      <LeftContainer>
+        <ImageParallax bgImage={Praveen} strength={500} /> 
+      </LeftContainer>
       <RightContainer>
         <ContactDetails>
           <ContactTitle>{TEXT.CONTACT}</ContactTitle>

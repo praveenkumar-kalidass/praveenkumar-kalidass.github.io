@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Parallax } from 'react-parallax';
 
 import { COLOR } from '../../constant';
 
@@ -73,4 +74,8 @@ export const Designation = styled.text`
   color: ${COLOR.WHITE};
   font-size: 16px;
   margin-left: 5px;
+`;
+
+export const ImageParallax = styled(Parallax)`
+  height: 100%;
 `;
