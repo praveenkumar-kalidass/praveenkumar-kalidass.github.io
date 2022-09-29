@@ -14,8 +14,8 @@ const TEXT = {
   PERMANENT_ADDRESS_LINE_1: '7B/4, 8th street,',
   PERMANENT_ADDRESS_LINE_2: 'Forest road, Theni.',
   CURRENT_ADDRESS: 'Address (Current)',
-  CURRENT_ADDRESS_LINE_1: '37, 25th cross street,',
-  CURRENT_ADDRESS_LINE_2: 'Venkateswara nagar, Ramapuram, Chennai.',
+  CURRENT_ADDRESS_LINE_1: 'Flat No. 5D, Ganapathy Garden',
+  CURRENT_ADDRESS_LINE_2: 'Selva Ganapathy nagar, Mugalivakkam, Chennai.',
 };
 
 export default TEXT;
